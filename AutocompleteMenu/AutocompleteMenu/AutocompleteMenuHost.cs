@@ -1,14 +1,17 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace AutocompleteMenuNS
 {
+    [System.ComponentModel.ToolboxItem(false)]
     internal class AutocompleteMenuHost : ToolStripDropDown
     {
         private IAutocompleteListView listView;
         public ToolStripControlHost Host { get; set; }
 
-        public IAutocompleteListView ListView { 
+        public IAutocompleteListView ListView 
+        { 
             get { return listView; }
             set {
                 if (value == null)
@@ -47,6 +50,12 @@ namespace AutocompleteMenuNS
 
             Menu = menu;
             ListView = new AutocompleteListView();
+        }
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            using (var brush = new SolidBrush(listView.Colors.BackColor))
+                e.Graphics.FillRectangle(brush, e.ClipRectangle);
         }
 
         internal void CalcSize()

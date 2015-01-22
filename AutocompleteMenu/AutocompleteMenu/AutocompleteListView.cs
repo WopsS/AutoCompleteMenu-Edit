@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace AutocompleteMenuNS
 {
+    [System.ComponentModel.ToolboxItem(false)]
     public class AutocompleteListView : UserControl, IAutocompleteListView
     {
         private readonly ToolTip toolTip = new ToolTip();
@@ -30,6 +31,11 @@ namespace AutocompleteMenuNS
         /// </summary>
         public event EventHandler<HoveredEventArgs> ItemHovered;
 
+        /// <summary>
+        /// Colors
+        /// </summary>
+        public Colors Colors { get; set; }
+
         internal AutocompleteListView()
         {
             SetStyle(
@@ -40,6 +46,7 @@ namespace AutocompleteMenuNS
             BackColor = Color.White;
             LeftPadding = 18;
             ToolTipDuration = 3000;
+            Colors = new Colors();
         }
 
         protected override void Dispose(bool disposing)
@@ -153,6 +160,11 @@ namespace AutocompleteMenuNS
             return new Rectangle(0, y, ClientSize.Width - 1, ItemHeight - 1);
         }
 
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            e.Graphics.Clear(Colors.BackColor);
+        }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             bool rtl = RightToLeft == RightToLeft.Yes;
@@ -180,9 +192,10 @@ namespace AutocompleteMenuNS
                 if (i == SelectedItemIndex)
                 {
                     Brush selectedBrush = new LinearGradientBrush(new Point(0, y - 3), new Point(0, y + ItemHeight),
-                                                                  Color.White, Color.Orange);
+                                                                  Colors.SelectedBackColor2, Colors.SelectedBackColor);
                     e.Graphics.FillRectangle(selectedBrush, textRect);
-                    e.Graphics.DrawRectangle(Pens.Orange, textRect);
+                    using(var pen = new Pen(Colors.SelectedBackColor))
+                        e.Graphics.DrawRectangle(pen, textRect);
                 }
                 if (i == hoveredItemIndex)
                     e.Graphics.DrawRectangle(Pens.Red, textRect);
@@ -197,7 +210,8 @@ namespace AutocompleteMenuNS
                                    TextRect = new RectangleF(textRect.Location, textRect.Size),
                                    StringFormat = sf,
                                    IsSelected = i == SelectedItemIndex,
-                                   IsHovered = i == hoveredItemIndex
+                                   IsHovered = i == hoveredItemIndex,
+                                   Colors = Colors
                                };
                 //call drawing
                 VisibleItems[i].OnPaint(args);

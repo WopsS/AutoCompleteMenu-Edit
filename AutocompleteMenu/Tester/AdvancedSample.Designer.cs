@@ -106,7 +106,9 @@
             this.autocompleteMenu1.AllowsTabKey = true;
             this.autocompleteMenu1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.autocompleteMenu1.ImageList = this.imageList1;
+            this.autocompleteMenu1.Items = new string[0];
             this.autocompleteMenu1.SearchPattern = "[\\w\\.:=!<>]";
+            this.autocompleteMenu1.TargetControlWrapper = null;
             // 
             // AdvancedSample
             // 

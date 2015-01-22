@@ -126,7 +126,8 @@ namespace AutocompleteMenuNS
 
         public virtual void OnPaint(PaintItemEventArgs e)
         {
-            e.Graphics.DrawString(ToString(), e.Font, Brushes.Black, e.TextRect, e.StringFormat);
+            using(var brush = new SolidBrush(e.IsSelected ? e.Colors.SelectedForeColor : e.Colors.ForeColor))
+                e.Graphics.DrawString(ToString(), e.Font, brush, e.TextRect, e.StringFormat);
         }
     }
 

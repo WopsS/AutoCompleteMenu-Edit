@@ -177,10 +177,10 @@ namespace AutocompleteMenuNS
 
             //draw columns
             Pen pen = Pens.Silver;
-            Brush brush = Brushes.Black;
             float x = e.TextRect.X;
             e.StringFormat.FormatFlags = e.StringFormat.FormatFlags | StringFormatFlags.NoWrap;
 
+            using (var brush = new SolidBrush(e.IsSelected ? e.Colors.SelectedForeColor : e.Colors.ForeColor))
             for (int i=0;i<MenuTextByColumns.Length;i++)
             {
                 var width = columnWidth[i];

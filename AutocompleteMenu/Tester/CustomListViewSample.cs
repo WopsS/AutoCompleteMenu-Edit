@@ -84,7 +84,14 @@ namespace Tester
             return GetItemRect(itemIndex);
         }
 
+        public Colors Colors { get; set; }
+
         #endregion
+
+        public MyListView()
+        {
+            Colors = new Colors();
+        }
 
         protected override void OnDoubleClick(EventArgs e)
         {

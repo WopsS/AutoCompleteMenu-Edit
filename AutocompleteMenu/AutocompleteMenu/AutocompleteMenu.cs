@@ -6,9 +6,9 @@
 //
 //  License: GNU Lesser General Public License (LGPLv3)
 //
-//  Email: pavel_torgashov@mail.ru.
+//  Email: pavel_torgashov@ukr.net.
 //
-//  Copyright (C) Pavel Torgashov, 2012. 
+//  Copyright (C) Pavel Torgashov, 2012-2014. 
 
 using System;
 using System.Collections.Generic;
@@ -108,7 +108,7 @@ namespace AutocompleteMenuNS
             if (WrapperNeeded != null)
                 WrapperNeeded(this, args);
             if (args.Wrapper == null)
-                args.Wrapper = TextBoxWrapper.Create(args.TargetControl);
+                args.Wrapper = ScintillaWrapper.Create((ScintillaNET.Scintilla)args.TargetControl);
         }
 
         ITextBoxWrapper CreateWrapper(Control control)
@@ -146,7 +146,8 @@ namespace AutocompleteMenuNS
         /// </summary>
         [DefaultValue(typeof(Size), "180, 200")]
         [Description("Maximum size of popup menu")]
-        public Size MaximumSize { 
+        public Size MaximumSize 
+        { 
             get { return maximumSize; }
             set { 
                 maximumSize = value;
@@ -182,6 +183,18 @@ namespace AutocompleteMenuNS
                 if (Host.ListView is AutocompleteListView)
                     (Host.ListView as AutocompleteListView).LeftPadding = value;
             }
+        }
+
+        /// <summary>
+        /// Colors of foreground and background
+        /// </summary>
+        [Browsable(true)]
+        [Description("Colors of foreground and background.")]
+        [TypeConverter(typeof(ExpandableObjectConverter))]
+        public Colors Colors
+        {
+            get { return (Host.ListView as IAutocompleteListView).Colors; }
+            set { (Host.ListView as IAutocompleteListView).Colors = value; }
         }
 
         /// <summary>
@@ -281,7 +294,7 @@ namespace AutocompleteMenuNS
                     value.ImageList = ImageList;
                     ctrl.RightToLeft = RightToLeft;
                     ctrl.Font = Font;
-                    ctrl.MaximumSize = ctrl.MaximumSize;
+                    ctrl.MaximumSize = MaximumSize;
                 }
                 Host.ListView = value;
                 Host.ListView.ItemSelected += new EventHandler(ListView_ItemSelected);
@@ -472,12 +485,31 @@ namespace AutocompleteMenuNS
             }
 
             if (!Host.Visible)
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.Up:
+                    case Keys.Down:
+                    case Keys.PageUp:
+                    case Keys.PageDown:
+                    case Keys.Left:
+                    case Keys.Right:
+                    case Keys.End:
+                    case Keys.Home:
+                    case Keys.ControlKey:
+                        {
+                            timer.Stop();
+                            return;
+                        }
+                }
+
                 if (Control.ModifierKeys == Keys.Control && e.KeyCode == Keys.Space)
                 {
                     ShowAutocomplete(true);
                     e.SuppressKeyPress = true;
                     return;
                 }
+            }
 
             ResetTimer();
         }
@@ -817,6 +849,14 @@ namespace AutocompleteMenuNS
                 }
 
             return false;
+        }
+
+        /// <summary>
+        /// Menu is visible
+        /// </summary>
+        public bool Visible
+        {
+            get { return Host != null && Host.Visible; }
         }
     }
 }

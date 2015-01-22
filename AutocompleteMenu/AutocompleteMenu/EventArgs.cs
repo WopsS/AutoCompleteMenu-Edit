@@ -33,6 +33,7 @@ namespace AutocompleteMenuNS
         public Font Font { get; internal set; }
         public bool IsSelected { get; internal set; }
         public bool IsHovered { get; internal set; }
+        public Colors Colors { get; internal set; }
 
         public PaintItemEventArgs(Graphics graphics, Rectangle clipRect):base(graphics, clipRect)
         {

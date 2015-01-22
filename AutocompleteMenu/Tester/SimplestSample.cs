@@ -15,5 +15,10 @@ namespace Tester
         {
             InitializeComponent();
         }
+
+        private void SimplestSample_Load(object sender, EventArgs e)
+        {
+            autocompleteMenu1.SetAutocompleteMenu(scintilla1, autocompleteMenu1);
+        }
     }
 }

@@ -51,5 +51,10 @@ namespace AutocompleteMenuNS
         /// Returns rectangle of item
         /// </summary>
         Rectangle GetItemRectangle(int itemIndex);
+
+        /// <summary>
+        /// Colors
+        /// </summary>
+        Colors Colors { get; set; }
     }
 }
