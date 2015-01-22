@@ -51,6 +51,7 @@ namespace AutocompleteMenuNS
             Point test;
             test = new Point();
             test.X = target.PointXFromPosition(pos);
+            test.Y = target.PointYFromPosition(pos);
             return test;
         }
 

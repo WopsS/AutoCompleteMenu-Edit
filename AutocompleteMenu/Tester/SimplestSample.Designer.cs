@@ -72,11 +72,16 @@
             this.autocompleteMenu1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.autocompleteMenu1.ImageList = null;
             this.autocompleteMenu1.Items = new string[] {
-        "SendClientMessage",
-        "SetPlayerPos",
-        "SetPlayerPosa",
-        "SetPlayerPosaa",
-        "SetPlayerPosaaa"};
+        "a",
+        "ab",
+        "abc",
+        "abcd",
+        "abcde",
+        "abcdef",
+        "abcdefg",
+        "abcdefgh",
+        "abcdefghi",
+        "abcdefghij"};
             this.autocompleteMenu1.LeftPadding = 0;
             this.autocompleteMenu1.TargetControlWrapper = null;
             // 
