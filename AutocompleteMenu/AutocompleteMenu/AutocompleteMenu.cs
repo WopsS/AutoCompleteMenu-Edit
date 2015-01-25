@@ -108,7 +108,16 @@ namespace AutocompleteMenuNS
             if (WrapperNeeded != null)
                 WrapperNeeded(this, args);
             if (args.Wrapper == null)
-                args.Wrapper = ScintillaWrapper.Create((ScintillaNET.Scintilla)args.TargetControl);
+            {
+                if (args.TargetControl is ScintillaNET.Scintilla)
+                {
+                    args.Wrapper = ScintillaWrapper.Create((ScintillaNET.Scintilla)args.TargetControl);
+                }
+                else
+                {
+                    args.Wrapper = TextBoxWrapper.Create(args.TargetControl);
+                }
+            }
         }
 
         ITextBoxWrapper CreateWrapper(Control control)
