@@ -25,5 +25,10 @@ namespace Tester
                 e.Item.ToolTipText = "This tooltip was dynamically generated for item " + e.Item.ToString();
             }
         }
+
+        private void DynamicTooltipSample_Load(object sender, EventArgs e)
+        {
+            autocompleteMenu1.SetAutocompleteMenu(richTextBox1, autocompleteMenu1);
+        }
     }
 }

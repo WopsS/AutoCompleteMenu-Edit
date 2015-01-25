@@ -350,6 +350,7 @@ namespace AutocompleteMenuNS
 
         public void SetAutocompleteMenu(Control control, AutocompleteMenu menu)
         {
+            Host.ListView.targetControl = control;
             if (menu != null)
             {
                 var wrapper = menu.CreateWrapper(control);

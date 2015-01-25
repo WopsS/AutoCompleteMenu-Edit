@@ -124,6 +124,7 @@ namespace Tester
             }
         }
 
+        public Control targetControl { get; set; }
         public void ShowToolTip(AutocompleteItem autocompleteItem, Control control = null)
         {
         }

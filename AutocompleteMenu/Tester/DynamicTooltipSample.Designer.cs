@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DynamicTooltipSample));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.richTextBox1 = new ScintillaNET.Scintilla();
             this.autocompleteMenu1 = new AutocompleteMenuNS.AutocompleteMenu();
+            ((System.ComponentModel.ISupportInitialize)(this.richTextBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -39,7 +41,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 13);
+            this.label2.Size = new System.Drawing.Size(67, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "RichTextBox";
             // 
@@ -52,22 +54,30 @@
             this.label3.Size = new System.Drawing.Size(445, 44);
             this.label3.TabIndex = 5;
             this.label3.Text = "This example shows how to dynamically create tooltip for items.\r\nStart to type \"a" +
-    "bc\" into textbox. Click on the item of AutocompleteMenu.";
+                "bc\" into textbox. Click on the item of AutocompleteMenu.";
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.autocompleteMenu1.SetAutocompleteMenu(this.richTextBox1, this.autocompleteMenu1);
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.Location = new System.Drawing.Point(12, 60);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(421, 180);
+            this.richTextBox1.Styles.BraceBad.FontName = "Verdan";
+            this.richTextBox1.Styles.BraceLight.FontName = "Verdan";
+            this.richTextBox1.Styles.CallTip.FontName = "Segoe ";
+            this.richTextBox1.Styles.ControlChar.FontName = "Verdan";
+            this.richTextBox1.Styles.Default.FontName = "Verdan";
+            this.richTextBox1.Styles.IndentGuide.FontName = "Verdan";
+            this.richTextBox1.Styles.LastPredefined.FontName = "Verdan";
+            this.richTextBox1.Styles.LineNumber.FontName = "Verdan";
+            this.richTextBox1.Styles.Max.FontName = "Verdan";
             this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
             // 
             // autocompleteMenu1
             // 
+            this.autocompleteMenu1.Colors = ((AutocompleteMenuNS.Colors)(resources.GetObject("autocompleteMenu1.Colors")));
             this.autocompleteMenu1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.autocompleteMenu1.ImageList = null;
             this.autocompleteMenu1.Items = new string[] {
@@ -77,7 +87,6 @@
         "abcdef"};
             this.autocompleteMenu1.LeftPadding = 0;
             this.autocompleteMenu1.TargetControlWrapper = null;
-            this.autocompleteMenu1.ToolTipDuration = 3000;
             this.autocompleteMenu1.Hovered += new System.EventHandler<AutocompleteMenuNS.HoveredEventArgs>(this.autocompleteMenu1_Hovered);
             // 
             // DynamicTooltipSample
@@ -90,6 +99,8 @@
             this.Controls.Add(this.richTextBox1);
             this.Name = "DynamicTooltipSample";
             this.Text = "Dynamic tooltip sample";
+            this.Load += new System.EventHandler(this.DynamicTooltipSample_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.richTextBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

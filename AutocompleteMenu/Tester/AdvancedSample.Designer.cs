@@ -139,7 +139,6 @@
             this.Controls.Add(this.textBox1);
             this.Name = "AdvancedSample";
             this.Text = "AdvancedSample";
-            this.Load += new System.EventHandler(this.AdvancedSample_Load);
             ((System.ComponentModel.ISupportInitialize)(this.richTextBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBox1)).EndInit();
             this.ResumeLayout(false);

@@ -52,6 +52,8 @@ namespace AutocompleteMenuNS
         /// </summary>
         Rectangle GetItemRectangle(int itemIndex);
 
+        Control targetControl { get; set; }
+
         /// <summary>
         /// Colors
         /// </summary>

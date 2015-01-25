@@ -98,6 +98,8 @@ namespace AutocompleteMenuNS
             }
         }
 
+        public Control targetControl { get; set; }
+
         public int SelectedItemIndex
         {
             get { return selectedItemIndex; }
@@ -113,7 +115,7 @@ namespace AutocompleteMenuNS
 
                 if (item != null)
                 {
-                    ShowToolTip(item);
+                    ShowToolTip(item, targetControl);
                     ScrollToSelected();
                 }
 
