@@ -16,6 +16,9 @@ namespace Tester
         {
             InitializeComponent();
 
+            // Set the menu first!
+            autocompleteMenu1.SetAutocompleteMenu(this.tb, this.autocompleteMenu1);
+
             autocompleteMenu1.SetAutocompleteItems(new DynamicCollection(tb));
         }
 

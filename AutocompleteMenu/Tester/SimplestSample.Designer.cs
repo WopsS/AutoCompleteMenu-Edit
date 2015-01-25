@@ -29,31 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimplestSample));
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.autocompleteMenu1 = new AutocompleteMenuNS.AutocompleteMenu();
             this.scintilla1 = new ScintillaNET.Scintilla();
+            this.autocompleteMenu2 = new AutocompleteMenuNS.AutocompleteMenu();
             ((System.ComponentModel.ISupportInitialize)(this.scintilla1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "TextBox";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 110);
+            this.label2.Location = new System.Drawing.Point(13, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "RichTextBox";
+            this.label2.Text = "ScintillaNET";
             // 
             // label3
             // 
@@ -64,7 +55,7 @@
             this.label3.Size = new System.Drawing.Size(380, 49);
             this.label3.TabIndex = 5;
             this.label3.Text = "This example shows how to create simplest autocomplete menu and link it to textbo" +
-                "x.\r\nStart to type \"abc\" into any textbox.";
+    "x.\r\nStart to type \"abc\" into any textbox.";
             // 
             // autocompleteMenu1
             // 
@@ -87,30 +78,48 @@
             // 
             // scintilla1
             // 
-            this.scintilla1.Location = new System.Drawing.Point(12, 126);
+            this.scintilla1.Location = new System.Drawing.Point(12, 72);
             this.scintilla1.Name = "scintilla1";
             this.scintilla1.Size = new System.Drawing.Size(356, 118);
-            this.scintilla1.Styles.BraceBad.FontName = "Verdan";
-            this.scintilla1.Styles.BraceLight.FontName = "Verdan";
-            this.scintilla1.Styles.CallTip.FontName = "Segoe ";
-            this.scintilla1.Styles.ControlChar.FontName = "Verdan";
+            this.scintilla1.Styles.BraceBad.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.scintilla1.Styles.BraceLight.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.scintilla1.Styles.CallTip.FontName = "Segoe \0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.scintilla1.Styles.ControlChar.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
             this.scintilla1.Styles.Default.BackColor = System.Drawing.SystemColors.Window;
-            this.scintilla1.Styles.Default.FontName = "Verdan";
-            this.scintilla1.Styles.IndentGuide.FontName = "Verdan";
-            this.scintilla1.Styles.LastPredefined.FontName = "Verdan";
-            this.scintilla1.Styles.LineNumber.FontName = "Verdan";
-            this.scintilla1.Styles.Max.FontName = "Verdan";
+            this.scintilla1.Styles.Default.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.scintilla1.Styles.IndentGuide.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.scintilla1.Styles.LastPredefined.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.scintilla1.Styles.LineNumber.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.scintilla1.Styles.Max.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
             this.scintilla1.TabIndex = 6;
+            // 
+            // autocompleteMenu2
+            // 
+            this.autocompleteMenu2.Colors = ((AutocompleteMenuNS.Colors)(resources.GetObject("autocompleteMenu2.Colors")));
+            this.autocompleteMenu2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.autocompleteMenu2.ImageList = null;
+            this.autocompleteMenu2.Items = new string[] {
+        "a",
+        "ab",
+        "abc",
+        "abcd",
+        "abcde",
+        "abcdef",
+        "abcdefg",
+        "abcdefgh",
+        "abcdefghi",
+        "abcdefghij"};
+            this.autocompleteMenu2.LeftPadding = 0;
+            this.autocompleteMenu2.TargetControlWrapper = null;
             // 
             // SimplestSample
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 256);
+            this.ClientSize = new System.Drawing.Size(380, 213);
             this.Controls.Add(this.scintilla1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "SimplestSample";
             this.Text = "SimplestSample";
             this.Load += new System.EventHandler(this.SimplestSample_Load);
@@ -123,9 +132,9 @@
         #endregion
 
         private AutocompleteMenuNS.AutocompleteMenu autocompleteMenu1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private ScintillaNET.Scintilla scintilla1;
+        private AutocompleteMenuNS.AutocompleteMenu autocompleteMenu2;
     }
 }

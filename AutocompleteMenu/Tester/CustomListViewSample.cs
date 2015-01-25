@@ -12,6 +12,9 @@ namespace Tester
         {
             InitializeComponent();
 
+            // Set the menu first!
+            autocompleteMenu1.SetAutocompleteMenu(this.textBox1, this.autocompleteMenu1);
+
             //attach custom listview
             autocompleteMenu1.ListView = myListView1;
 

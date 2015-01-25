@@ -30,34 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdvancedSample));
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.richTextBox1 = new ScintillaNET.Scintilla();
-            this.textBox1 = new ScintillaNET.Scintilla();
             this.autocompleteMenu1 = new AutocompleteMenuNS.AutocompleteMenu();
             ((System.ComponentModel.ISupportInitialize)(this.richTextBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "TextBox";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 105);
+            this.label2.Location = new System.Drawing.Point(13, 48);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "RichTextBox";
+            this.label2.Text = "ScintillaNET";
             // 
             // label3
             // 
@@ -68,7 +56,7 @@
             this.label3.Size = new System.Drawing.Size(390, 45);
             this.label3.TabIndex = 5;
             this.label3.Text = "This example shows how to create custom autocomplete menu with keywords, snippets" +
-                ", method suggestions, text correctors etc.";
+    ", method suggestions, text correctors etc.";
             // 
             // imageList1
             // 
@@ -80,42 +68,23 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.Location = new System.Drawing.Point(12, 121);
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox1.Location = new System.Drawing.Point(12, 64);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(366, 149);
-            this.richTextBox1.Styles.BraceBad.FontName = "Verdan";
-            this.richTextBox1.Styles.BraceLight.FontName = "Verdan";
-            this.richTextBox1.Styles.CallTip.FontName = "Segoe ";
-            this.richTextBox1.Styles.ControlChar.FontName = "Verdan";
-            this.richTextBox1.Styles.Default.FontName = "Verdan";
-            this.richTextBox1.Styles.IndentGuide.FontName = "Verdan";
-            this.richTextBox1.Styles.LastPredefined.FontName = "Verdan";
-            this.richTextBox1.Styles.LineNumber.FontName = "Verdan";
-            this.richTextBox1.Styles.Max.FontName = "Verdan";
+            this.richTextBox1.Styles.BraceBad.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.richTextBox1.Styles.BraceLight.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.richTextBox1.Styles.CallTip.FontName = "Segoe \0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.richTextBox1.Styles.ControlChar.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.richTextBox1.Styles.Default.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.richTextBox1.Styles.IndentGuide.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.richTextBox1.Styles.LastPredefined.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.richTextBox1.Styles.LineNumber.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.richTextBox1.Styles.Max.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "Try to type \"in\"\nTry to type \"class\"\nTry to type \"obj.\"\nTry to type \"set{}abc\"\nTr" +
-                "y to type \"123and567\"";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(12, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(366, 20);
-            this.textBox1.Styles.BraceBad.FontName = "Verdan";
-            this.textBox1.Styles.BraceLight.FontName = "Verdan";
-            this.textBox1.Styles.CallTip.FontName = "Segoe ";
-            this.textBox1.Styles.ControlChar.FontName = "Verdan";
-            this.textBox1.Styles.Default.FontName = "Verdan";
-            this.textBox1.Styles.IndentGuide.FontName = "Verdan";
-            this.textBox1.Styles.LastPredefined.FontName = "Verdan";
-            this.textBox1.Styles.LineNumber.FontName = "Verdan";
-            this.textBox1.Styles.Max.FontName = "Verdan";
-            this.textBox1.TabIndex = 0;
+    "y to type \"123and567\"";
             // 
             // autocompleteMenu1
             // 
@@ -131,16 +100,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 282);
+            this.ClientSize = new System.Drawing.Size(390, 235);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox1);
             this.Name = "AdvancedSample";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdvancedSample";
             ((System.ComponentModel.ISupportInitialize)(this.richTextBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,10 +115,8 @@
 
         #endregion
 
-        private ScintillaNET.Scintilla textBox1;
         private ScintillaNET.Scintilla richTextBox1;
         private AutocompleteMenuNS.AutocompleteMenu autocompleteMenu1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ImageList imageList1;

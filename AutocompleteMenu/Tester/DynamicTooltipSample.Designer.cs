@@ -41,9 +41,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
+            this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "RichTextBox";
+            this.label2.Text = "ScintillaNET";
             // 
             // label3
             // 
@@ -54,25 +54,25 @@
             this.label3.Size = new System.Drawing.Size(445, 44);
             this.label3.TabIndex = 5;
             this.label3.Text = "This example shows how to dynamically create tooltip for items.\r\nStart to type \"a" +
-                "bc\" into textbox. Click on the item of AutocompleteMenu.";
+    "bc\" into textbox. Click on the item of AutocompleteMenu.";
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.Location = new System.Drawing.Point(12, 60);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(421, 180);
-            this.richTextBox1.Styles.BraceBad.FontName = "Verdan";
-            this.richTextBox1.Styles.BraceLight.FontName = "Verdan";
-            this.richTextBox1.Styles.CallTip.FontName = "Segoe ";
-            this.richTextBox1.Styles.ControlChar.FontName = "Verdan";
-            this.richTextBox1.Styles.Default.FontName = "Verdan";
-            this.richTextBox1.Styles.IndentGuide.FontName = "Verdan";
-            this.richTextBox1.Styles.LastPredefined.FontName = "Verdan";
-            this.richTextBox1.Styles.LineNumber.FontName = "Verdan";
-            this.richTextBox1.Styles.Max.FontName = "Verdan";
+            this.richTextBox1.Styles.BraceBad.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.richTextBox1.Styles.BraceLight.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.richTextBox1.Styles.CallTip.FontName = "Segoe \0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.richTextBox1.Styles.ControlChar.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.richTextBox1.Styles.Default.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.richTextBox1.Styles.IndentGuide.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.richTextBox1.Styles.LastPredefined.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.richTextBox1.Styles.LineNumber.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.richTextBox1.Styles.Max.FontName = "Verdan\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
             this.richTextBox1.TabIndex = 0;
             // 
             // autocompleteMenu1
@@ -98,6 +98,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.richTextBox1);
             this.Name = "DynamicTooltipSample";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dynamic tooltip sample";
             this.Load += new System.EventHandler(this.DynamicTooltipSample_Load);
             ((System.ComponentModel.ISupportInitialize)(this.richTextBox1)).EndInit();

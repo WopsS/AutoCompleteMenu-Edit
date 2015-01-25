@@ -20,6 +20,7 @@ namespace Tester
             for (int i = 1; i <= 1000000; i++)
                 list.Add(i.ToString());
 
+            autocompleteMenu1.SetAutocompleteMenu(this.textBox1, autocompleteMenu1);
             autocompleteMenu1.SetAutocompleteItems(list);
         }
     }

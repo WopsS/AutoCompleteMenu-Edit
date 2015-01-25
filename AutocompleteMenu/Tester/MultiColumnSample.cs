@@ -9,6 +9,8 @@ namespace Tester
         {
             InitializeComponent();
 
+            autocompleteMenu1.SetAutocompleteMenu(this.textBox1, this.autocompleteMenu1);
+
             autocompleteMenu1.MaximumSize = new System.Drawing.Size(250, 200);
             var columnWidth = new int[] { 50, 200 };
 

@@ -31,8 +31,7 @@ namespace Tester
             var tb = new ScintillaNET.Scintilla() { Parent = this, Dock = DockStyle.Fill };
             menu.SetAutocompleteMenu(tb, menu);
 
-            var f = new Form();
-            f.Show();
+
             (menu.ListView as Control).Parent.VisibleChanged += (o, e) => 
                 { 
                     (menu.ListView as Control).Parent.Top = 100; 

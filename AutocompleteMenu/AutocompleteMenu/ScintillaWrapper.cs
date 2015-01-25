@@ -55,7 +55,6 @@ namespace AutocompleteMenuNS
             return test;
         }
 
-
         public virtual Form FindForm()
         {
             return target.FindForm();
@@ -93,7 +92,7 @@ namespace AutocompleteMenuNS
 
         public bool Readonly
         {
-            get { return target.IsReadOnly;  }
+            get { return target.IsReadOnly; }
         }
     }
 }

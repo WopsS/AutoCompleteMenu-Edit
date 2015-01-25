@@ -19,6 +19,7 @@ namespace Tester
         private void SimplestSample_Load(object sender, EventArgs e)
         {
             autocompleteMenu1.SetAutocompleteMenu(scintilla1, autocompleteMenu1);
+            autocompleteMenu2.SetAutocompleteMenu(scintilla1, autocompleteMenu2);
         }
     }
 }

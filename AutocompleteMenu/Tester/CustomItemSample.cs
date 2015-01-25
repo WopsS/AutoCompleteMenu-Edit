@@ -15,6 +15,9 @@ namespace Tester
         {
             InitializeComponent();
 
+            // Set the menu first!
+            autocompleteMenu1.SetAutocompleteMenu(this.textBox1, this.autocompleteMenu1);
+
             autocompleteMenu1.AddItem(new EmailSnippet("007@sis.gov.uk"));
             autocompleteMenu1.AddItem(new EmailSnippet("adam@god.gov"));
             autocompleteMenu1.AddItem(new EmailSnippet("eva@god.gov"));

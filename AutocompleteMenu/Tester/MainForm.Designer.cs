@@ -274,6 +274,7 @@
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Autocomplete Menu";
             this.DoubleClick += new System.EventHandler(this.MainForm_DoubleClick);
             this.ResumeLayout(false);

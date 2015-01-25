@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tb = new ScintillaNET.Scintilla();
             this.autocompleteMenu1 = new AutocompleteMenuNS.AutocompleteMenu();
+            ((System.ComponentModel.ISupportInitialize)(this.tb)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -50,31 +51,40 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 13);
+            this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 9;
-            this.label2.Text = "RichTextBox";
+            this.label2.Text = "ScintillaNET";
             // 
             // tb
             // 
-            this.tb.AcceptsTab = true;
             this.tb.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.autocompleteMenu1.SetAutocompleteMenu(this.tb, this.autocompleteMenu1);
             this.tb.Location = new System.Drawing.Point(12, 76);
             this.tb.Name = "tb";
             this.tb.Size = new System.Drawing.Size(369, 167);
+            this.tb.Styles.BraceBad.FontName = "Verdana\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.tb.Styles.BraceLight.FontName = "Verdana\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.tb.Styles.CallTip.FontName = "Segoe UI\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.tb.Styles.ControlChar.FontName = "Verdana\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.tb.Styles.Default.FontName = "Verdana\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.tb.Styles.IndentGuide.FontName = "Verdana\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.tb.Styles.LastPredefined.FontName = "Verdana\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.tb.Styles.LineNumber.FontName = "Verdana\0\0\0\0\0\0\0\0\0\0\0\0\0";
+            this.tb.Styles.Max.FontName = "Verdana\0\0\0\0\0\0\0\0\0\0\0\0\0";
             this.tb.TabIndex = 6;
             this.tb.Text = resources.GetString("tb.Text");
             this.tb.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tb_KeyDown);
             // 
             // autocompleteMenu1
             // 
+            this.autocompleteMenu1.Colors = ((AutocompleteMenuNS.Colors)(resources.GetObject("autocompleteMenu1.Colors")));
             this.autocompleteMenu1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.autocompleteMenu1.ImageList = null;
             this.autocompleteMenu1.Items = new string[0];
             this.autocompleteMenu1.MinFragmentLength = 1;
             this.autocompleteMenu1.SearchPattern = "[\\w]";
+            this.autocompleteMenu1.TargetControlWrapper = null;
             // 
             // DynamicMenuSample
             // 
@@ -85,7 +95,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tb);
             this.Name = "DynamicMenuSample";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DynamicMenu";
+            ((System.ComponentModel.ISupportInitialize)(this.tb)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -70,6 +70,7 @@ namespace AutocompleteMenuNS
                 timer.Dispose();
                 Host.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -451,6 +452,7 @@ namespace AutocompleteMenuNS
         private void form_FormClosing(object sender, FormClosingEventArgs e)
         {
             Close();
+            Dispose(true);
         }
 
         private void form_LocationChanged(object sender, EventArgs e)
@@ -724,11 +726,13 @@ namespace AutocompleteMenuNS
             }
             foreach (string item in items)
                 list.Add(new AutocompleteItem(item));
+
             SetAutocompleteItems(list);
         }
 
         public void SetAutocompleteItems(IEnumerable<AutocompleteItem> items)
         {
+  
             sourceItems = items;
         }
 
