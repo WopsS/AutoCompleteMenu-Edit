@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DynamicMenuSample));
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tb = new System.Windows.Forms.RichTextBox();
+            this.tb = new ScintillaNET.Scintilla();
             this.autocompleteMenu1 = new AutocompleteMenuNS.AutocompleteMenu();
             this.SuspendLayout();
             // 
@@ -95,7 +95,7 @@
 
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RichTextBox tb;
+        private ScintillaNET.Scintilla tb;
         private AutocompleteMenuNS.AutocompleteMenu autocompleteMenu1;
     }
 }

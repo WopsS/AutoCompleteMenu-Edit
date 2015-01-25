@@ -28,7 +28,7 @@ namespace Tester
             menu.SetAutocompleteItems(items);
 
             //
-            var tb = new RichTextBox() { Parent = this, Dock = DockStyle.Fill };
+            var tb = new ScintillaNET.Scintilla() { Parent = this, Dock = DockStyle.Fill };
             menu.SetAutocompleteMenu(tb, menu);
 
             var f = new Form();

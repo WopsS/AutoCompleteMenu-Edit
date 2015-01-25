@@ -29,9 +29,9 @@ namespace Tester
 
     internal class DynamicCollection : IEnumerable<AutocompleteItem>
     {
-        private TextBoxBase tb;
+        private ScintillaNET.Scintilla tb;
 
-        public DynamicCollection(TextBoxBase tb)
+        public DynamicCollection(ScintillaNET.Scintilla tb)
         {
             this.tb = tb;
         }
