@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScintillaNET;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -99,6 +100,16 @@ namespace AutocompleteMenuNS
         }
 
         public Control targetControl { get; set; }
+
+        /// <summary>
+        /// Convert and keep targetControl to Scintilla control.
+        /// </summary>
+        private Scintilla ScintillaControl { get; set; }
+
+        /// <summary>
+        /// Calculate every time when the user request ToolTip where is the cursor position in textbox.
+        /// </summary>
+        private Point TextAreaPoint { get; set; }
 
         public int SelectedItemIndex
         {
@@ -256,7 +267,7 @@ namespace AutocompleteMenuNS
 
         private int PointToItemIndex(Point p)
         {
-            return (p.Y + VerticalScroll.Value)/ItemHeight;
+            return (p.Y + VerticalScroll.Value) / ItemHeight;
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -283,11 +294,12 @@ namespace AutocompleteMenuNS
             AdjustScroll();
             Invalidate();
         }
-
+        
         public void ShowToolTip(AutocompleteItem autocompleteItem, Control control = null)
         {
             string title = autocompleteItem.ToolTipTitle;
             string text = autocompleteItem.ToolTipText;
+
             if (control == null)
                 control = this;
 
@@ -298,17 +310,26 @@ namespace AutocompleteMenuNS
                 return;
             }
 
+            ScintillaControl = (Scintilla)targetControl;
+            TextAreaPoint = new Point(ScintillaControl.PointXFromPosition(ScintillaControl.Caret.Position), ScintillaControl.PointYFromPosition(ScintillaControl.Caret.Position));
+
             if (string.IsNullOrEmpty(text))
             {
                 toolTip.ToolTipTitle = null;
-                if (control == this) toolTip.Show(title, control, Width + 3, 0, ToolTipDuration);
-                else toolTip.Show(title, control, Width + 26, Location.Y, ToolTipDuration);
+
+                if (control == this) 
+                    toolTip.Show(title, control, Width + 3, 0, ToolTipDuration);
+                else
+                    toolTip.Show(title, control, TextAreaPoint.X + Width + 9, TextAreaPoint.Y + 19, ToolTipDuration);
             }
             else
             {
                 toolTip.ToolTipTitle = title;
-                if (control == this) toolTip.Show(text, control, Width + 3, 0, ToolTipDuration);
-                else toolTip.Show(text, control, Width + 26, Location.Y, ToolTipDuration);
+
+                if (control == this)
+                    toolTip.Show(text, control, Width + 3, 0, ToolTipDuration);
+                else
+                    toolTip.Show(text, control, TextAreaPoint.X + Width + 9, TextAreaPoint.Y + 19, ToolTipDuration);
             }
         }
     }
