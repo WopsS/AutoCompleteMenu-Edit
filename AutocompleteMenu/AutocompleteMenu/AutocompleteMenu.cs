@@ -350,7 +350,8 @@ namespace AutocompleteMenuNS
 
         public void SetAutocompleteMenu(Control control, AutocompleteMenu menu)
         {
-            Host.ListView.targetControl = control;
+            Host.ListView.targetControl = control; //Set the tooltip target control.
+
             if (menu != null)
             {
                 var wrapper = menu.CreateWrapper(control);

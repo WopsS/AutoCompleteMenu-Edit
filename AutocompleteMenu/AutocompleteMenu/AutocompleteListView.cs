@@ -115,7 +115,8 @@ namespace AutocompleteMenuNS
 
                 if (item != null)
                 {
-                    ShowToolTip(item, targetControl);
+                    if (Focused == false) ShowToolTip(item, targetControl);
+                    else if (Focused == true) ShowToolTip(item);
                     ScrollToSelected();
                 }
 
@@ -300,12 +301,14 @@ namespace AutocompleteMenuNS
             if (string.IsNullOrEmpty(text))
             {
                 toolTip.ToolTipTitle = null;
-                toolTip.Show(title, control, Width + 3, 0, ToolTipDuration);
+                if (control == this) toolTip.Show(title, control, Width + 3, 0, ToolTipDuration);
+                else toolTip.Show(title, control, Width + 26, Location.Y, ToolTipDuration);
             }
             else
             {
                 toolTip.ToolTipTitle = title;
-                toolTip.Show(text, control, Width + 3, 0, ToolTipDuration);
+                if (control == this) toolTip.Show(text, control, Width + 3, 0, ToolTipDuration);
+                else toolTip.Show(text, control, Width + 26, Location.Y, ToolTipDuration);
             }
         }
     }
